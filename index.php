@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION['admin'] = false;
+?>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -214,9 +218,8 @@
                                     </H6>
                                     <!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
                                     <!-- Thanks for using HTTrack Website Copier! -->
-                                    <meta CONTENT="0; URL=davur.dexignzone.com/frontend/front-home.html"
+                                    <meta CONTENT="0; URL=davur.dexignzone.com/frontend/front-home.php"
                                           HTTP-EQUIV="Refresh">
-
 
                                     <!-- ==================== Start epilogue ==================== -->
                                 </td>

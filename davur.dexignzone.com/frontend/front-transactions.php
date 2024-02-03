@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+try {
+    $data_base = new PDO('mysql:host=localhost;dbname=restaurant_les_delices;', 'root', '');
+} catch (Exception $err) {
+    die('Erreur' . $err);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +60,9 @@
         ?>
 
         <?php
-        require './components/sidebar.php';
+        if (isset($_SESSION['admin']) and $_SESSION['admin']){
+            require './components/sidebar.php';
+        }
         ?>
 
 		<div class="menu-close"></div>
@@ -115,18 +127,22 @@
 							<table id="example5" class="display mb-4 defaultTable dataTablesCard" style="min-width: 845px;">
 								<thead>
 									<tr>
-										<th>ORDER NUM</th>
-										<th>NAME</th>
-										<th>AMOUNT</th>
-										<th>ITEMS</th>
-										<th>TYPE</th>
-										<th>PAYMENT</th>
-										<th>UPDATED ON</th>
-										<th class="text-end">ACTION</th>
+										<th>Num commande</th>
+										<th>Nom</th>
+										<th>Montant</th>
+										<th>Quantité</th>
+										<th>Type</th>
+										<th>Paiement</th>
+										<th>Heure</th>
+										<th class="text-end">ACTIONs</th>
 									</tr>
 								</thead>
 								<tbody>
+
 									<tr>
+                                        <?php
+                                            $request = $data_base->query("SELECT * FROM plat, plat_commande, commande WHERE commande.id_cde = plat_commande.id_cde and plat_commande.id_plat=plat.id_plat")
+                                        ?>
 										<td>BA85454</td>
 										<td><strong>Wiliam Franchi</strong></td>
 										<td>$120.00</td>

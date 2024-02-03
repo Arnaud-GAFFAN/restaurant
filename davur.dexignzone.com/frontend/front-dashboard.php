@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +56,9 @@
         ?>
 
         <?php
-        require './components/sidebar.php';
+        if (isset($_SESSION['admin']) and $_SESSION['admin']){
+            require './components/sidebar.php';
+        }
         ?>
 		
 		<div class="menu-sidebar">
@@ -533,3 +540,4 @@
 
 <!-- Mirrored from davur.dexignzone.com/frontend/front-dashboard.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Mar 2023 11:36:02 GMT -->
 </html>
+

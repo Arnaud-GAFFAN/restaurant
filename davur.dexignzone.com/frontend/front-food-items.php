@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +55,9 @@
         ?>
 
         <?php
-        require './components/sidebar.php';
+        if (isset($_SESSION['admin']) and $_SESSION['admin']){
+            require './components/sidebar.php';
+        }
         ?>
 
 		<div class="menu-close"></div>
@@ -62,7 +69,7 @@
             <!-- row -->
 			<div class="container-fluid">
 				<div class="form-head dashboard-head d-md-flex d-block mb-5 align-items-start">
-					<h2 class="dashboard-title me-auto">Food Items<a  href="javascript:void(0);" data-toggle="modal" data-target="#AddNewCustomer" class="btn btn-success btn-rounded ms-4 text-white d-inline-block">Add New</a></h2>
+					<h2 class="dashboard-title me-auto">Liste des plats<a  href="./add_dish.php" data-toggle="modal" data-target="#AddNewCustomer" class="btn btn-success btn-rounded ms-4 text-white d-inline-block">Nouveau</a></h2>
 					<div class="input-group search-area">
 						<input type="text" class="form-control" placeholder="Search here...">
 						<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
@@ -75,12 +82,12 @@
 							<table id="example5" class="display mb-4 defaultTable dataTablesCard" style="min-width: 845px;">
 								<thead>
 									<tr>
-										<th>ITEM NAME</th>
-										<th>CATEGORY</th>
+										<th>Nom du plat</th>
+										<th>Catégorie</th>
 										<th>ADD-ONS</th>
-										<th>PRICE</th>
-										<th>SALES</th>
-										<th class="text-end">ACTION</th>
+										<th>Prix</th>
+										<th>Ventes</th>
+										<th class="text-end">Actions</th>
 									</tr>
 								</thead>
 								<tbody>

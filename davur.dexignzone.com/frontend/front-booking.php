@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,10 +53,11 @@
         ?>
 
         <?php
-        require './components/sidebar.php';
+        if (isset($_SESSION['admin']) and $_SESSION['admin']){
+            require './components/sidebar.php';
+        }
         ?>
 		<div class="menu-close"></div>
-		
 		<!--**********************************
             Content body start
         ***********************************-->

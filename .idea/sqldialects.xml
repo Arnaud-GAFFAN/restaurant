@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/davur.dexignzone.com/frontend/actions/load-all-dishes.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/davur.dexignzone.com/frontend/actions/load-category.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/davur.dexignzone.com/frontend/actions/post_commande.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/davur.dexignzone.com/frontend/actions/view_dish.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/davur.dexignzone.com/frontend/add_dish.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/davur.dexignzone.com/frontend/front-home.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/davur.dexignzone.com/frontend/front-orders_status.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/davur.dexignzone.com/frontend/front-transactions.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/davur.dexignzone.com/frontend/page-login.php" dialect="GenericSQL" />
+  </component>
+</project>

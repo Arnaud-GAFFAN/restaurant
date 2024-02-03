@@ -5,7 +5,7 @@
             <div class="container-fluid clearfix">
                 <!-- Website Logo -->
                 <div class="logo-header mostion logo-dark">
-                    <a href="front-dashboard.php"><img src="images/logo-text.png" alt=""></a>
+                    <a href="#" style="font-size: 1rem; font-weight: bold">Les délices</a>
                 </div>
                 <!-- Nav Toggle Button -->
                 <button class="navbar-toggler collapsed navicon justify-content-end" type="button"
@@ -16,6 +16,9 @@
                     <span></span>
                 </button>
                 <!-- Extra Nav -->
+                <?php
+                if (isset($_SESSION['admin']) and $_SESSION['admin']){
+                ?>
                 <div class="extra-nav">
                     <div class="extra-cell">
                         <a href="javascript:void();" class="profile-box">
@@ -37,6 +40,9 @@
                         <span></span>
                     </div>
                 </div>
+                <?php
+                }
+                ?>
 
                 <div class="header-nav navbar-collapse collapse" id="navbarNavDropdown">
                     <div class="logo-header">
@@ -57,6 +63,9 @@
                                     </g>
                                 </svg>
                                 Acceuil</a></li>
+                        <?php
+                        if (isset($_SESSION['admin']) and $_SESSION['admin']){
+                        ?>
                         <li class=""><a href="front-transactions.php">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
@@ -68,7 +77,10 @@
                                               fill="#000000"/>
                                     </g>
                                 </svg>
-                                Transaction</a></li>
+                                COMMANDES</a></li>
+                        <?php
+                        }
+                        ?>
                         <li class=""><a href="front-booking.php">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
@@ -92,7 +104,8 @@
                                               fill="#000000" opacity="0.3"/>
                                     </g>
                                 </svg>
-                                Statu des commandes</a></li>
+                                Statu des commandes</a>
+                        </li>
                     </ul>
                 </div>
             </div>
